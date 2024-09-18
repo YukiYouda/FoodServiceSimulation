@@ -62,9 +62,7 @@ class Customer extends Person {
             echo $key . " x " . $value . " ";
         }
         echo "\n";
-        $restaurant->order($foodOrder);
-        echo "\n";
 
-        return new \Invoices\Invoice($foodOrder);
+        return $restaurant->order($foodOrder);
     }
 }

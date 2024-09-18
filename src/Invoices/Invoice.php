@@ -9,20 +9,11 @@ class Invoice {
     private string $orderTime;
     private int $estimatedTimeInMinutes;
 
-    public function __construct(FoodOrder $foodOrder)
+    public function __construct(float $finalPrice, string $orderTime, int $estimatedTimeInMinutes)
     {
-        $items = $foodOrder->getItems();
-        $totalPrice = 0;
-        $totalTime = 0;
-
-        for ($i = 0; $i < count($items); $i++) {
-            $totalPrice += $items[$i]->getPrice();
-            $totalTime += $items[$i]->getEstimatedTimeInMinutes();
-        }
-
-        $this->finalPrice = $totalPrice;
-        $this->orderTime = $foodOrder->getOrderTime();
-        $this->estimatedTimeInMinutes = $totalTime;
+        $this->finalPrice = $finalPrice;
+        $this->orderTime = $orderTime;
+        $this->estimatedTimeInMinutes = $estimatedTimeInMinutes;
     }
 
     public function printInvoice(): void

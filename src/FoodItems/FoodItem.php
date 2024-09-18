@@ -18,15 +18,18 @@ abstract class FoodItem {
 
     abstract public static function getCategory(): string;
 
-    public function getPrice(): float {
+    public function getPrice(): float
+    {
         return $this->price;
     }
 
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->name;
     }
 
-    public function getEstimatedTimeInMinutes(): int {
+    public function getEstimatedTimeInMinutes(): int
+    {
         return $this->estimatedTimeInMinutes;
     }
 
